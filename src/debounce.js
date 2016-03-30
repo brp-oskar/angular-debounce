@@ -7,6 +7,7 @@ angular.module('rt.debounce', []).factory('debounce', function ($timeout) {
         function ping() {
             result = fn.apply(context || this, args || []);
             context = args = null;
+            cancel();
         }
 
         // Cancel the timeout (for rescheduling afterwards).
